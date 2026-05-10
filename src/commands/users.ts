@@ -1,5 +1,5 @@
 import { setUser } from "../config";
-import { createUser, getUser } from "../lib/db/queries/users";
+import { createUser, deleteAllUsers, getUser } from "../lib/db/queries/users";
 
 export async function handlerLogin(cmdName: string, ...args: string[]) {
   if (args.length !== 1) {
@@ -29,4 +29,9 @@ export async function handlerRegister(cmdName: string, ...args: string[]) {
 
   setUser(user.name);
   console.log("User created successfully!");
+}
+
+export async function handlerReset(cmdName: string, ...args: string[]) {
+  await deleteAllUsers();
+  console.log("Database reset successfully!");
 }
