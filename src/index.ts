@@ -3,7 +3,8 @@ import {
   registerCommand,
   runCommand,
 } from "./commands/commands";
-import { handlerLogin, handlerRegister, handlerReset } from "./commands/users";
+import { handlerLogin, handlerRegister } from "./commands/users";
+import { handlerReset } from "./commands/reset";
 
 async function main() {
   const args = process.argv.slice(2);
