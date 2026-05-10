@@ -4,7 +4,7 @@ import { getFeedByUrl } from "../lib/db/queries/feeds";
 import {
   createFeedFollow,
   getFeedFollowsForUser,
-} from "../lib/db/queries/feedFollows";
+} from "../lib/db/queries/feed-follows";
 
 export async function handlerFollow(cmdName: string, ...args: string[]) {
   if (args.length !== 1) {
