@@ -28,9 +28,7 @@ export async function fetchFeed(feedURL: string) {
   }
 
   const xml = await res.text();
-  const parser = new XMLParser({
-    processEntities: false,
-  });
+  const parser = new XMLParser();
   let result = parser.parse(xml);
 
   const channel = result.rss?.channel;
